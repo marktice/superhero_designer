@@ -2,8 +2,10 @@
   <h1 class="display-4">Items</h1>
   <p class="lead">Welcome to our items page</p>
   <hr class="my-4">
-  <p>Superheros are so cool</p>
+  <p>Superheros are so cool, make one of your own?</p>
   <p class="lead">
+    <%= link_to 'New', items_new_path, class: "btn btn-primary btn-lg" %>
+    <a class="btn btn-primary btn-lg" href="/items/new" role="button">NEW</a>
     <a class="btn btn-primary btn-lg" href="/" role="button">HOME</a>
   </p>
 </div>
