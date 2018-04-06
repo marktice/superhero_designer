@@ -2,20 +2,20 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
   end
+
+  def show
+    @item = Item.find(params[:id])
+  end
   
   def new
     @item = Item.new
+    @item_types = ItemType.all
   end
   
   def create
-    @item = Item.new(params.include(:label, :description, :item_type, :price))
-
-    if @item.save
-      redirect_to show_items_path(@item)
-    else
-      # respond with 500 error
-    end
-
+    @item = Item.new(params.require(:item).permit(:label, :description, :price, :item_type_id))    
+    @item.save
+    redirect_to items_path
   end
 
 end

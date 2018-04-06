@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/items/new', to: 'items#new'
   post '/items', to: 'items#create'
   
+  get '/items/:id', to: 'items#show'  
 end
